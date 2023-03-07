@@ -1,6 +1,11 @@
 <script>
 import store from '../store';
 export default {
+    props: {
+        movieCard: {
+            type: Object,
+        },
+    },
     data() {
         return {
             store,
@@ -12,10 +17,10 @@ export default {
 <template>
     <div class="card">
 
-        <h3 class="title"></h3>
-        <h3 class="title-original"></h3>
-        <span class="lang"></span>
-        <span class="rating"></span>
+        <h3 class="title">{{ movieCard.title }}</h3>
+        <h3 class="original-title"><em> {{ movieCard.original_title }} </em></h3>
+        <span class="lang">Language: {{ movieCard.original_language }}</span>
+        <span class="rating">Rating: {{ movieCard.vote_average }}</span>
 
     </div>
 </template>
@@ -27,20 +32,30 @@ export default {
     padding: 20px;
     color: burlywood;
     border-radius: 20px;
+    border: 1px solid black;
 
     .title {
-        font-size: 1.5rem;
+        color: black;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
-    .title-original {
-        font-size: 1.2rem;
+    .original-title {
+        color: black;
+        font-size: 1rem;
+        margin-bottom: 10px;
     }
 
     .lang {
+        color: red;
+        display: block;
         font-size: 1rem;
+        margin-bottom: 5px;
     }
 
     .rating {
+        color: blue;
+        display: block;
         font-size: 1rem;
     }
 }

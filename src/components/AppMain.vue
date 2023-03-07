@@ -31,18 +31,11 @@ export default {
 
                     this.store.movies = res.data.results
 
-                    const { title, original_title, original_language, vote_average } = res.data.results
-                    this.store.title = title
-                    this.store.originalTitle = original_title
-                    this.store.originalLang = original_language
-                    this.store.rating = vote_average
-
                     console.log(this.store)
-
                 })
                 .catch((error) => {
                     console.log('error')
-                    this.store.movies = []
+                    moviesArr = []
                 })
 
             console.log('after fetching', this.store.fetchMoviesTrigger)
@@ -51,6 +44,9 @@ export default {
     computed: {
         fetchMoviesTriggerComp() {
             return this.store.fetchMoviesTrigger
+        },
+        moviesArr() {
+            return this.store.movies
         }
     },
     watch: {
@@ -60,8 +56,8 @@ export default {
         }
     },
     created() {
-        // console.log('store on creation', this.store)
-        // this.fetchMovies()
+        console.log('store on creation', this.store)
+        this.fetchMovies()
     },
 }
 </script>
@@ -70,7 +66,9 @@ export default {
     <main>
         <div class="container">
 
-            <MainCard class="col"></MainCard>
+            <MainCard v-for="(el, i) in store.movies" :key="i" :movieCard="el" :title="moviesArr.title"
+                :original_title="moviesArr.original_title" :original_language="moviesArr.original_language"
+                :vote_average="moviesArr.vote_average" class="col"></MainCard>
 
         </div>
     </main>
