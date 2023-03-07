@@ -9,7 +9,7 @@ export default {
     methods: {
         onSubmitFilters() {
             console.log('onSubMitFilters event triggered from HeaderSearchBar!')
-            this.store.fetchMoviesTrigger = true
+            this.store.fetchMoviesTrigger += 1
         }
     }
 }

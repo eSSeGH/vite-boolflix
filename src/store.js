@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 const store = reactive({
-    fetchMoviesTrigger: false,
+    fetchMoviesTrigger: 0,
     movies: [],
     title: 'attack on titans',
     originalTitle: '',

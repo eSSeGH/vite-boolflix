@@ -44,6 +44,8 @@ export default {
                     console.log('error')
                     this.store.movies = []
                 })
+
+            console.log('after fetching', this.store.fetchMoviesTrigger)
         }
     },
     computed: {
@@ -52,15 +54,14 @@ export default {
         }
     },
     watch: {
-        fetchMoviesTriggerComp(newBoolean, oldBoolean) {
+        fetchMoviesTriggerComp(newVal, oldVal) {
             console.log('submit filters event has been watched')
             this.fetchMovies()
-            this.store.fetchMoviesTrigger = false
         }
     },
     created() {
-        console.log('store on creation', this.store)
-        this.fetchMovies()
+        // console.log('store on creation', this.store)
+        // this.fetchMovies()
     },
 }
 </script>
