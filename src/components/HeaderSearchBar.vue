@@ -6,6 +6,12 @@ export default {
             store,
         }
     },
+    methods: {
+        onSubmitFilters() {
+            console.log('onSubMitFilters event triggered from HeaderSearchBar!')
+            this.store.fetchMoviesTrigger = true
+        }
+    }
 }
 </script>
 
@@ -16,8 +22,13 @@ export default {
 
             <div class="title-form">
                 <label for="title-form-input">TITOLO</label>
-                <input class="title-form-input" type="text" placeholder="Digita il titolo che stai cercando...">
+                <input class="title-form-input" v-model="store.title" type="text"
+                    placeholder="Digita il titolo che stai cercando...">
             </div>
+
+            <button class="submit-filters" @click="onSubmitFilters">
+                FILTRA
+            </button>
         </div>
     </section>
 </template>
@@ -43,6 +54,13 @@ export default {
             .title-form-input {
                 width: 200px;
             }
+        }
+
+        .submit-filters {
+            padding: 5px 10px;
+            background-color: orangered;
+            border-radius: 5px 10px;
+            align-self: flex-end;
         }
     }
 }
