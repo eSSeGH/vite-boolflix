@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+ol,
+menu {
+    list-style-type: none;
+}
+
+// CONTAINER
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+// UTILITY CLASSES
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
