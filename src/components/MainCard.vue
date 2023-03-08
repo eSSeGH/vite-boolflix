@@ -1,6 +1,10 @@
 <script>
 import store from '../store';
+import CardLang from './CardLang.vue';
 export default {
+    components: {
+        CardLang,
+    },
     props: {
         movieCard: {
             type: Object,
@@ -19,7 +23,9 @@ export default {
 
         <h3 class="title">{{ movieCard.title }}</h3>
         <h3 class="original-title"><em> {{ movieCard.original_title }} </em></h3>
-        <span class="lang">Language: {{ movieCard.original_language }}</span>
+
+        <CardLang :original_language="movieCard.original_language"></CardLang>
+
         <span class="rating">Rating: {{ movieCard.vote_average }}</span>
 
     </div>
@@ -51,6 +57,12 @@ export default {
         display: block;
         font-size: 1rem;
         margin-bottom: 5px;
+
+        img {
+            border-radius: 50%;
+            width: 12px;
+            aspect-ratio: 1;
+        }
     }
 
     .rating {
