@@ -1,9 +1,12 @@
 <script>
 import store from '../store';
 import CardLang from './CardLang.vue';
+import CardRating from './CardRating.vue';
+
 export default {
     components: {
         CardLang,
+        CardRating,
     },
     props: {
         movieCard: {
@@ -13,6 +16,14 @@ export default {
     data() {
         return {
             store,
+        }
+    },
+    methods: {
+        to5Rating(rate10) {
+            const rate5 = rate10 / 2
+            const rate5Int = Math.round(rate5)
+
+            return rate5Int
         }
     },
 }
@@ -30,7 +41,7 @@ export default {
 
         <CardLang :original_language="movieCard.original_language"></CardLang>
 
-        <span class="rating">Rating: {{ movieCard.vote_average }}</span>
+        <CardRating class="rating" :vote_average="movieCard.vote_average"></CardRating>
 
     </div>
 </template>

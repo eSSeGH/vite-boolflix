@@ -87,11 +87,6 @@ export default {
             this.fetchTvSeries()
         }
     },
-    created() {
-        console.log('store on creation', this.store)
-        this.fetchMovies()
-        this.fetchTvSeries()
-    },
 }
 </script>
 
