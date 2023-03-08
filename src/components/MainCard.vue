@@ -22,7 +22,9 @@ export default {
     <div class="card">
 
         <h3 class="title">{{ movieCard.title }}</h3>
+        <h3 class="title">{{ movieCard.name }}</h3>
         <h3 class="original-title"><em> {{ movieCard.original_title }} </em></h3>
+        <h3 class="original-title"><em> {{ movieCard.original_name }} </em></h3>
 
         <CardLang :original_language="movieCard.original_language"></CardLang>
 
@@ -39,6 +41,7 @@ export default {
     color: burlywood;
     border-radius: 20px;
     border: 1px solid black;
+    height: 275px;
 
     .title {
         color: black;
@@ -49,7 +52,6 @@ export default {
     .original-title {
         color: black;
         font-size: 1rem;
-        margin-bottom: 10px;
     }
 
     .lang {
