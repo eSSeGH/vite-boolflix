@@ -41,7 +41,7 @@ export default {
 
         <CardLang :original_language="movieCard.original_language"></CardLang>
 
-        <CardRating class="rating" :vote_average="movieCard.vote_average"></CardRating>
+        <CardRating class="rating" :vote_average="to5Rating(movieCard.vote_average)"></CardRating>
 
     </div>
 </template>

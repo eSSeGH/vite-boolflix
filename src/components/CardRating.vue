@@ -25,19 +25,13 @@ export default {
 </script>
 
 <template>
-    <body>
-        <span class="rating flex-center">
-            <span>Rating: {{ to5Rating(vote_average) }}</span>
-
-            <!-- <i class="fa-star" :class="(vote_average = 0) ? 'fa-regular' : 'fa-solid'"></i>
-                <i class="fa-star" :class="(vote_average < 1) ? 'fa-regular' : 'fa-solid'"></i>
-                <i class="fa-star" :class="(vote_average < 2) ? 'fa-regular' : 'fa-solid'"></i>
-                <i class="fa-star" :class="(vote_average < 3) ? 'fa-regular' : 'fa-solid'"></i>
-                <i class="fa-star" :class="(vote_average < 4) ? 'fa-regular' : 'fa-solid'"></i>
-
-                <i class="fa-solid fa-star"></i> -->
-        </span>
-    </body>
+    <span class="rating flex-center">
+        <i class="fa-star" :class="(vote_average > 1) ? 'fa-solid' : 'fa-regular'"></i>
+        <i class="fa-star" :class="(vote_average >= 2) ? 'fa-solid' : 'fa-regular'"></i>
+        <i class="fa-star" :class="(vote_average >= 3) ? 'fa-solid' : 'fa-regular'"></i>
+        <i class="fa-star" :class="(vote_average >= 4) ? 'fa-solid' : 'fa-regular'"></i>
+        <i class="fa-star" :class="(vote_average >= 5) ? 'fa-solid' : 'fa-regular'"></i>
+    </span>
 </template>
 
 <style lang="scss" scoped>
@@ -47,5 +41,9 @@ export default {
     color: blue;
     display: block;
     font-size: 1rem;
+
+    i {
+        font-family: 'Font Awesome 6 Free';
+    }
 }
 </style>
