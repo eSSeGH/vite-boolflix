@@ -20,14 +20,11 @@ export default {
 
         <div class="container flex-center">
 
-            <div class="title-form">
-                <label for="title-form-input">TITOLO</label>
-                <input class="title-form-input" v-model="store.title" type="text"
-                    placeholder="Digita il titolo che stai cercando...">
-            </div>
+            <input class="title-form-input" v-model="store.title" type="text"
+                placeholder="Digita il titolo che stai cercando...">
 
             <button class="submit-filters" @click="onSubmitFilters">
-                FILTRA
+                <font-awesome-icon class="magnifying-glass icon" icon="fa-solid fa-magnifying-glass"></font-awesome-icon>
             </button>
         </div>
     </section>
@@ -40,27 +37,32 @@ export default {
 
     .container {
         justify-content: space-around;
+        gap: 1rem;
 
-        .title-form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        &:hover>.title-form-input {
+            width: 200px;
+            background-color: black;
+            border: 1px solid white;
+        }
 
-            label {
-                font-size: 0.75rem;
-                color: red;
-            }
-
-            .title-form-input {
-                width: 200px;
-            }
+        .title-form-input {
+            width: 0;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            color: white;
+            height: 1.5rem;
+            transition: width 700ms, background-color 0ms, border 0ms;
         }
 
         .submit-filters {
-            padding: 5px 10px;
-            background-color: orangered;
-            border-radius: 5px 10px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
             align-self: flex-end;
+
+            .magnifying-glass {
+                font-size: 1.2rem;
+            }
+
         }
     }
 }
