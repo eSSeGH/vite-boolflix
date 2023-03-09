@@ -32,15 +32,25 @@ export default {
 <template>
     <div class="card">
 
-        <img :src="'https://image.tmdb.org/t/p/w342' + movieCard.poster_path" alt="">
+        <img class="thumb" :src="'https://image.tmdb.org/t/p/w342' + movieCard.poster_path" alt="">
 
-        <h3 class="title">{{ movieCard.title ? movieCard.title : movieCard.name }}</h3>
-        <h4 class="original-title"><em> {{ movieCard.original_title ? movieCard.original_title : movieCard.original_name }}
-            </em></h4>
+        <div class="show">
 
-        <CardLang :original_language="movieCard.original_language"></CardLang>
+            <div class="info-text">
+                <h3 class="title">{{ movieCard.title ? movieCard.title : movieCard.name }}</h3>
+                <h4 class="original-title"><em> {{ movieCard.original_title ? movieCard.original_title :
+                    movieCard.original_name }}</em></h4>
+            </div>
 
-        <CardRating class="rating" :vote_average="to5Rating(movieCard.vote_average)"></CardRating>
+            <span class="overview">{{ movieCard.overview }}</span>
+
+            <div class="info-icon">
+                <CardLang :original_language="movieCard.original_language"></CardLang>
+
+                <CardRating class="rating" :vote_average="to5Rating(movieCard.vote_average)"></CardRating>
+                <span class="vote-count">{{ movieCard.vote_count }}</span>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -49,39 +59,54 @@ export default {
 @use '../style/general.scss' as *;
 
 .card {
-    padding: 20px;
-    color: burlywood;
     border-radius: 20px;
-    border: 1px solid black;
+    position: relative;
 
-    .title {
-        color: black;
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+    &:hover>.show {
+        display: flex;
     }
 
-    .original-title {
-        color: black;
-        font-size: 1rem;
+    .thumb {
+        border-radius: 20px;
     }
 
-    .lang {
-        color: red;
-        display: block;
-        font-size: 1rem;
-        margin-bottom: 5px;
+    .show {
+        background-color: rgba(0, 0, 0, 0.75);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        display: none;
+        color: white;
 
-        img {
-            border-radius: 50%;
-            width: 12px;
-            aspect-ratio: 1;
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
-    }
 
-    .rating {
-        color: blue;
-        display: block;
-        font-size: 1rem;
+        .original-title {
+            font-size: 1rem;
+        }
+
+        .overview {
+            font-size: 0.75rem;
+            height: 160px;
+            overflow-y: auto;
+        }
+
+        .rating {
+            display: inline-block;
+            margin-right: 7px;
+        }
+
+        .vote-count {
+            display: inline-block;
+        }
     }
 }
 </style>

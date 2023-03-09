@@ -119,12 +119,19 @@ export default {
 @use '../style/general.scss' as *;
 
 main {
-    padding: 2rem;
+    background-color: black;
 
     .container {
+        margin-top: -115px;
+        background-color: none;
 
         .col {
             flex-basis: calc(100%/6 - 16px*5/6)
+        }
+
+        h2 {
+            color: white;
+            flex-basis: 100%;
         }
 
         .movies-list {
@@ -133,10 +140,6 @@ main {
             flex-wrap: wrap;
             gap: 16px;
             padding-bottom: 20px;
-
-            h2 {
-                flex-basis: 100%;
-            }
         }
 
         .tv-series-list {
@@ -144,10 +147,6 @@ main {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
-
-            h2 {
-                flex-basis: 100%;
-            }
         }
     }
 }

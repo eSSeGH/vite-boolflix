@@ -19,10 +19,19 @@ export default {
 
 <template>
   <AppHeader />
-  <AppHero />
-  <AppMain />
+
+  <AppHero class="app-hero"></AppHero>
+
+  <AppMain class="app-main">
+  </AppMain>
 </template>
 
 <style lang="scss" scoped>
 @use './style/general.scss' as *;
+
+.app-hero {}
+
+.app-main {
+  z-index: 1;
+}
 </style>
