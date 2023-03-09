@@ -44,6 +44,7 @@ export default {
 
     i {
         font-family: 'Font Awesome 6 Free';
+        color: rgb(255, 196, 0);
     }
 }
 </style>

@@ -34,10 +34,9 @@ export default {
 
         <img :src="'https://image.tmdb.org/t/p/w342' + movieCard.poster_path" alt="">
 
-        <h3 class="title">{{ movieCard.title }}</h3>
-        <h3 class="title">{{ movieCard.name }}</h3>
-        <h3 class="original-title"><em> {{ movieCard.original_title }} </em></h3>
-        <h3 class="original-title"><em> {{ movieCard.original_name }} </em></h3>
+        <h3 class="title">{{ movieCard.title ? movieCard.title : movieCard.name }}</h3>
+        <h4 class="original-title"><em> {{ movieCard.original_title ? movieCard.original_title : movieCard.original_name }}
+            </em></h4>
 
         <CardLang :original_language="movieCard.original_language"></CardLang>
 
