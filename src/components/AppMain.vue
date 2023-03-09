@@ -75,6 +75,7 @@ export default {
         },
         moviesArr() {
             return this.store.movies
+
         },
         tvSeriesArr() {
             return this.store.tvSeries

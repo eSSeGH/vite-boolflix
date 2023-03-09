@@ -26,11 +26,16 @@ export default {
 
 <template>
     <span class="rating flex-center">
-        <i class="fa-star" :class="(vote_average > 1) ? 'fa-solid' : 'fa-regular'"></i>
-        <i class="fa-star" :class="(vote_average >= 2) ? 'fa-solid' : 'fa-regular'"></i>
-        <i class="fa-star" :class="(vote_average >= 3) ? 'fa-solid' : 'fa-regular'"></i>
-        <i class="fa-star" :class="(vote_average >= 4) ? 'fa-solid' : 'fa-regular'"></i>
-        <i class="fa-star" :class="(vote_average >= 5) ? 'fa-solid' : 'fa-regular'"></i>
+        <font-awesome-icon class="star-icon"
+            :icon="(vote_average > 1) ? 'fa-star fa-solid' : 'fa-star fa-regular'"></font-awesome-icon>
+        <font-awesome-icon class="star-icon"
+            :icon="(vote_average >= 2) ? 'fa-star fa-solid' : 'fa-star fa-regular'"></font-awesome-icon>
+        <font-awesome-icon class="star-icon"
+            :icon="(vote_average >= 3) ? 'fa-star fa-solid' : 'fa-star fa-regular'"></font-awesome-icon>
+        <font-awesome-icon class="star-icon"
+            :icon="(vote_average >= 4) ? 'fa-star fa-solid' : 'fa-star fa-regular'"></font-awesome-icon>
+        <font-awesome-icon class="star-icon"
+            :icon="(vote_average >= 5) ? 'fa-star fa-solid' : 'fa-star fa-regular'"></font-awesome-icon>
     </span>
 </template>
 
@@ -42,9 +47,8 @@ export default {
     display: block;
     font-size: 1rem;
 
-    i {
+    .star-icon {
         font-family: 'Font Awesome 6 Free';
         color: rgb(255, 196, 0);
     }
-}
-</style>
+}</style>
