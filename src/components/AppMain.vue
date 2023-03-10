@@ -26,12 +26,7 @@ export default {
                 }
             })
                 .then((res) => {
-                    console.log(res)
-                    console.log(res.data.results)
-
                     this.store.movies = res.data.results
-
-                    console.log(this.store)
                 })
                 .catch((error) => {
                     console.log('error')
@@ -39,6 +34,8 @@ export default {
                 })
 
             console.log('after fetching', this.store.fetchMoviesTrigger)
+            this.store.title = ''
+            console.log(this.store.title)
         },
         fetchTvSeries() {
             console.log('fetching tv series...')
@@ -54,12 +51,7 @@ export default {
                 }
             })
                 .then((res) => {
-                    console.log(res)
-                    console.log(res.data.results)
-
                     this.store.tvSeries = res.data.results
-
-                    console.log(this.store)
                 })
                 .catch((error) => {
                     console.log('error')
@@ -67,6 +59,8 @@ export default {
                 })
 
             console.log('after fetching', this.store.fetchMoviesTrigger)
+            this.store.title = ''
+            console.log(this.store.title)
         },
     },
     computed: {
@@ -135,7 +129,6 @@ main {
         }
 
         .movies-list {
-            display: block;
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
@@ -143,7 +136,6 @@ main {
         }
 
         .tv-series-list {
-            display: block;
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
