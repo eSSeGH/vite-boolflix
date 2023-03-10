@@ -16,6 +16,7 @@ export default {
     data() {
         return {
             store,
+            posterSrc: this.movieCard.poster_path ? 'https://image.tmdb.org/t/p/w342' + this.movieCard.poster_path : '/img/poster_placeholder.png',
         }
     },
     methods: {
@@ -32,7 +33,7 @@ export default {
 <template>
     <div class="card">
 
-        <img class="thumb" :src="'https://image.tmdb.org/t/p/w342' + movieCard.poster_path" alt="">
+        <img class="thumb" :src="posterSrc" alt="">
 
         <div class="show">
 
@@ -68,6 +69,7 @@ export default {
 
     .thumb {
         border-radius: 20px;
+        height: 100%;
     }
 
     .show {
