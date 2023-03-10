@@ -108,10 +108,13 @@ export default {
 @use '../style/general.scss' as *;
 
 main {
-    background-color: black;
+    margin-top: -390px;
+    background: linear-gradient(to top,
+            black 85%,
+            black 85%,
+            rgba(0, 0, 0, 0) 100%);
 
     .container {
-        margin-top: -115px;
         background-color: none;
 
         .col {
@@ -121,6 +124,7 @@ main {
         h2 {
             color: white;
             flex-basis: 100%;
+            filter: drop-shadow(0 0 10px black)
         }
 
         .movies-list {

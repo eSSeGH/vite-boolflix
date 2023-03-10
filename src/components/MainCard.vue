@@ -62,6 +62,7 @@ export default {
 .card {
     border-radius: 20px;
     position: relative;
+    box-shadow: 0 0 5px black;
 
     &:hover>.show {
         display: flex;
@@ -74,6 +75,7 @@ export default {
 
     .show {
         background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 20px;
         width: 100%;
         height: 100%;
         position: absolute;
