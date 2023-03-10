@@ -11,13 +11,26 @@ export default {
             store,
         }
     },
+    methods: {
+        handleScroll(event) {
+            const headerEl = document.querySelector('.header')
+            headerEl.style.transition = 'background-color 1s'
+            headerEl.style.backgroundColor = 'black'
+        },
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    updated() {
+        console.log(headerEl)
+    }
 }
 </script>
 
 <template>
     <header class="header flex-center">
 
-        <img class="logo" src="/img/netflix-logo.jpg" alt="Netflix extended logo">
+        <img class="logo" src="/img/netflix-logo-sticker.png" alt="Netflix extended logo">
 
         <nav class="nav flex-center">
             <ul style="display: contents;">
@@ -53,8 +66,12 @@ export default {
 
 .header {
     height: 70px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
 
     .logo {
         height: 70px;
@@ -62,7 +79,7 @@ export default {
         margin-right: 10px;
 
         &:hover {
-            filter: drop-shadow(0 0 10px red);
+            filter: drop-shadow(0 0 14px red);
         }
     }
 
@@ -74,9 +91,10 @@ export default {
 
         .nav-link {
             transition: color 300ms;
+            filter: drop-shadow(0 0 2px black);
 
             &:hover {
-                color: lightgrey;
+                color: rgb(190, 190, 190);
             }
         }
     }

@@ -24,11 +24,12 @@ export default {
 @use '../style/general.scss' as *;
 
 .header2 {
-    height: 750px;
+    height: 100vh;
     background-image: url(/img/death-note-jumbotron.avif);
     background-position: center;
     background-size: cover;
     padding: 50px;
+    margin-top: -70px;
 
 }
 </style>

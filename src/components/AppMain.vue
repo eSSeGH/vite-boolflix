@@ -32,10 +32,6 @@ export default {
                     console.log('error')
                     moviesArr = []
                 })
-
-            console.log('after fetching', this.store.fetchMoviesTrigger)
-            this.store.title = ''
-            console.log(this.store.title)
         },
         fetchTvSeries() {
             console.log('fetching tv series...')
@@ -60,7 +56,6 @@ export default {
 
             console.log('after fetching', this.store.fetchMoviesTrigger)
             this.store.title = ''
-            console.log(this.store.title)
         },
     },
     computed: {
