@@ -9,13 +9,40 @@ export default {
     data() {
         return {
             store,
+            jumbotrons: [
+                '/img/death-note-jumbotron.avif',
+                '/img/AOT-jumbotron.jpg',
+                '/img/OP-jumbotron.webp',
+                '/img/DB-jumbotron.jpg',
+                '/img/AOT2-jumbotron.jpeg',
+            ]
         }
     },
+    mounted() {
+        const jumbotronEl = document.querySelector('.header2')
+        let jumboCounter = 1
+
+        setInterval(() => {
+            console.log(setInterval)
+            jumbotronEl.style.backgroundImage = `url(${this.jumbotrons[jumboCounter]})`
+            jumboCounter += 1
+
+            console.log(this.jumbotrons.length)
+
+            if (jumboCounter >= this.jumbotrons.length) {
+                jumboCounter = 0
+            }
+            console.log(jumboCounter)
+
+        }, 8000)
+    }
 }
 </script>
 
 <template>
     <header class="header2">
+
+
 
     </header>
 </template>
